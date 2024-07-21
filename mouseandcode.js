@@ -50,6 +50,7 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
 
+        //COPY SKETCH FUNCTION
         const editOptions3 = await performRightClickOptionByTitle(newPage, selector, title);
         console.log(editOptions3);
         copySketchFunction(editOptions3, newPage);
@@ -67,18 +68,19 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
         //SELECT SKETCH TO CLICK OR UNCLICK, THIS CODE IS REALLY IMPORTANT
-        console.log('Waiting 10 seconds.');
-        console.log('SELECTING ITEM 5 ON THE LIST.');
-        await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
-        await newPage.evaluate(() => {
-            const thirdButton = document.querySelectorAll('.os-list-item-name')[5];
-            thirdButton.click();
-            if (thirdButton) {
-                thirdButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-            } else {
-                console.error('Third button not found.');
-            }
-        });
+        /* THIS CODE NEEDS TO BE COMMENTED ON AND OFF DEPENDING ON THE SITUATION */
+        // console.log('Waiting 10 seconds.');
+        // console.log('SELECTING ITEM 5 ON THE LIST.');
+        // await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+        // await newPage.evaluate(() => {
+        //     const thirdButton = document.querySelectorAll('.os-list-item-name')[5];
+        //     thirdButton.click();
+        //     if (thirdButton) {
+        //         thirdButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        //     } else {
+        //         console.error('Third button not found.');
+        //     }
+        // });
         console.log("CCCCCCCCCCC")
 
 
@@ -90,12 +92,14 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         console.log('pasteIntoSketchFunction');
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
         const desiredIndex1 = 7; //IMPORTANT PART THAT MAKES THE CODE RUN!
+
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 10 seconds
         console.log('Waiting 5 seconds.');
         await clickButtonByIndex(newPage, desiredIndex1);
         //Right click option
         const selector1 = 'div[data-id="AJC+8X/uU1MWWXEK"]'; // Replace with the appropriate selector
         const title1 = 'Second Sketch'; // Replace with the desired title
+
         const editOptions1 = await performRightClickOptionByTitle(newPage, selector1, title1);
         console.log(editOptions1);
         //Paste into sketch function
@@ -329,7 +333,7 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         console.log('SELECTING ITEM 5 ON THE LIST.');
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
         await newPage.evaluate(() => {
-            const thirdButton = document.querySelectorAll('.os-list-item-name')[5];
+            const thirdButton = document.querySelectorAll('.os-list-item-name')[5]; //I think this code needs to be removed
             thirdButton.click();
             if (thirdButton) {
                 thirdButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });

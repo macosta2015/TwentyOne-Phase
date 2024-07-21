@@ -9,7 +9,7 @@ async function searchAndClickExtrude(newPage) {
 
     await newPage.type('.os-search-box-input', 'Extrude5');
     await new Promise(resolve => setTimeout(resolve, 3000));
-    console.log('Typed "transform" into the search input field.');
+    console.log('Typed "Extrude5" into the search input field.');
 
     console.log('Pressed enter')
     await newPage.keyboard.press('Enter'); //pressed enter

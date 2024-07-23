@@ -258,17 +258,29 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
 
-        //EXTRUDE THE FUNCTION
-        console.log("Moving to Extrude for the second time, extrude down.")
-        //EXPERIMENTAL CODE
-        const desiredIndex6 = 6; //IMPORTANT PART THAT MAKES THE CODE RUN!
-        await clickButtonByIndex(newPage, desiredIndex6); //in desiredIndex1, First Sketch is equal to 5
-        await searchAndClickExtrudeRemove(newPage);
-        console.log('After waiting for the Extrude function')
+
+
+        // //EXPERIMENTAL CODE
+
+        // //EXTRUDE THE FUNCTION
+        // console.log("Moving to Extrude for the second time, extrude down.")
+        // const desiredIndex6 = 6; //IMPORTANT PART THAT MAKES THE CODE RUN!
+        // await clickButtonByIndex(newPage, desiredIndex6); //in desiredIndex1, First Sketch is equal to 5
+        // await searchAndClickExtrudeRemove(newPage);
+        // console.log('After waiting for the Extrude function')
+        // await waitForEnter();
+
+
+
+
+
+        // NEW SKETCH
+        console.log('New Sketch Start, user needs to select Extuded phase')
+        ////////////////////
         await waitForEnter();
-
-
-
+        ////////////////////
+        console.log('New Sketch Ending')
+        await performTest(newPage);
 
 
 
@@ -328,23 +340,27 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         console.log('clickButtonByIndex');
         console.log('pasteIntoSketchFunction');
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
-        const desiredIndex8 = 8; //IMPORTANT PART THAT MAKES THE CODE RUN!
+        const desiredIndex9 = 9; //IMPORTANT PART THAT MAKES THE CODE RUN!
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 10 seconds
         console.log('Waiting 5 seconds.');
-        await clickButtonByIndex(newPage, desiredIndex8);
+        await clickButtonByIndex(newPage, desiredIndex9);
         //Right click option
-        const selector8 = 'div[data-id="yyHiDTMWflCzpmJN"]'; // Replace with the appropriate selector
+        // const selector9 = 'div[data-id="8aS8lah7ZP9RTZu0"]'; // Replace with the appropriate selector
+        const selector9 = 'div[data-id="UJaijK4u3WDjRIZq"]'; // Replace with the appropriate selector
+        // UJaijK4u3WDjRIZq
         // const selector8 = 'div[data-id="AJC+8X/uU1MWWXEK"]'; // Replace with the appropriate selector
-        const title8 = 'Third Sketch'; // Replace with the desired title
-        const editOptions8 = await performRightClickOptionByTitle(newPage, selector8, title8);
-        console.log(editOptions8);
+        //ORIGINAL GOOD const title8 = 'Third Sketch'; // Replace with the desired title
+        const title9 = 'Sketch 2'; // Replace with the desired title
+
+        const editOptions9 = await performRightClickOptionByTitle(newPage, selector9, title9);
+        console.log(editOptions9);
         //Paste into sketch function
         //TODO: THE CORE RUNS BECAUSE WE MADE IT RUN FOR 40 SECONDS. 
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
         console.log('Waited for 10 seconds.');
         console.log('BEFORE THE CODE RUNS.');
         //NEED TO ADD THE EDIT FUNCTION HERE, LIKE pasteIntoSketchFunction OR copySketchFunction
-        pasteIntoSketchFunction(editOptions8, newPage);
+        pasteIntoSketchFunction(editOptions9, newPage);
         await new Promise(resolve => setTimeout(resolve, 40000)); // Wait for 10 seconds
         console.log('Waited for 40 seconds.'); console.log('AFTER THE CODE RUNS.');
         console.log("PPPPPPPPPPP")
@@ -412,7 +428,8 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 5
         // const selector3 = 'div[data-id="yyHiDTMWflCzpmJN"]'; // Replace with the appropriate selector //ORIGINAL
         // const selector4 = 'div[data-id="AJC+8X/uU1MWWXEK"]'; // Replace with the appropriate selector
-        const selector4 = 'div[data-id="yyHiDTMWflCzpmJN"]'; // Replace with the appropriate selector
+        //TESTING NEW SELECTOR
+        const selector4 = 'div[data-id="T+Y2o0Cyh3UPOxKb"]'; // Replace with the appropriate selector
         // const title4 = 'Second Sketch'; // Replace with the desired title
         const title4 = 'Third Sketch'; // Replace with the desired title
         const editOptions6 = await performRightClickOptionByTitle(newPage, selector4, title4);

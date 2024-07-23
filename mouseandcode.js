@@ -15,6 +15,8 @@ const waitForEnter = require('./components/waitForEnter.js');
 const searchAndClickTransform = require('./components/searchAndClickTransform.js');
 const searchAndClickCustomExtrude2 = require('./components/searchAndClickCustomExtrude2.js');
 const searchAndClickExtrude = require('./components/searchAndClickExtrude.js');
+const searchAndClickExtrudeRemove = require('./components/searchAndClickExtrudeRemove.js');
+
 
 
 
@@ -43,9 +45,9 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
         //EXTRUDE THE FUNCTION
-        // await searchAndClickExtrude(newPage);
-        // console.log('After waiting for the Extrude function')
-        // await waitForEnter();
+        await searchAndClickExtrude(newPage);
+        console.log('After waiting for the Extrude function')
+        await waitForEnter();
 
 
 
@@ -93,7 +95,7 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
         //ORIGINAL const desiredIndex1 = 7; //IMPORTANT PART THAT MAKES THE CODE RUN!
         //NOT ORIGINAL WORKING const desiredIndex1 = 6; //IMPORTANT PART THAT MAKES THE CODE RUN!
-        const desiredIndex1 = 5; //IMPORTANT PART THAT MAKES THE CODE RUN!
+        const desiredIndex1 = 6; //IMPORTANT PART THAT MAKES THE CODE RUN!
 
 
 
@@ -211,10 +213,11 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         await waitForEnter();
         console.log('USER CLICKED ENTER')
         ////////////////////
+
+
+
+
         await searchAndClickTransform(newPage);
-
-
-
         console.log('After waiting for the transform function')
         console.log("KKKKKKKKKKKK")
 
@@ -252,6 +255,17 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         await waitForEnter();
         ////////////////////
         console.log("LLLLLLLLLLLL")
+
+
+
+        //EXTRUDE THE FUNCTION
+        console.log("Moving to Extrude for the second time, extrude down.")
+        //EXPERIMENTAL CODE
+        const desiredIndex6 = 6; //IMPORTANT PART THAT MAKES THE CODE RUN!
+        await clickButtonByIndex(newPage, desiredIndex6); //in desiredIndex1, First Sketch is equal to 5
+        await searchAndClickExtrudeRemove(newPage);
+        console.log('After waiting for the Extrude function')
+        await waitForEnter();
 
 
 

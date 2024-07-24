@@ -36,7 +36,9 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
         //ADDING EXTRUDE FUNCTION TO THE CODE
         //ALL THE CODE TOGETHER
+        console.log('click by index')
         const desiredIndex = 5; // Or any other desired index
+        console.log('click by index')
         await clickButtonByIndex(newPage, desiredIndex);
         //Right click option
         const selector = 'div[data-id="Dg4JdGx6jlZTm4XD"]'; // Replace with the appropriate selector
@@ -45,10 +47,25 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
         //EXTRUDE THE FUNCTION
-        await searchAndClickExtrude(newPage);
-        console.log('After waiting for the Extrude function')
-        await waitForEnter();
+        // await searchAndClickExtrude(newPage);
+        // console.log('After waiting for the Extrude function')
+        // await waitForEnter();
 
+
+        ///TEST
+        console.log("AAAAAAAAAA")
+        ////////////////////
+        await waitForEnter();
+        ////////////////////
+        console.log("BBBBBBBBBB")
+        console.log('right button')
+        await element.click({ button: 'right' });
+        console.log('right button')
+        console.log("AAAAAAAAAA")
+        ////////////////////
+        await waitForEnter();
+        ////////////////////
+        console.log("BBBBBBBBBB")
 
 
 
@@ -346,7 +363,7 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         await clickButtonByIndex(newPage, desiredIndex9);
         //Right click option
         // const selector9 = 'div[data-id="8aS8lah7ZP9RTZu0"]'; // Replace with the appropriate selector
-        const selector9 = 'div[data-id="UJaijK4u3WDjRIZq"]'; // Replace with the appropriate selector
+        const selector9 = 'div[data-id="8aS8lah7ZP9RTZu0"]'; // Replace with the appropriate selector
         // UJaijK4u3WDjRIZq
         // const selector8 = 'div[data-id="AJC+8X/uU1MWWXEK"]'; // Replace with the appropriate selector
         //ORIGINAL GOOD const title8 = 'Third Sketch'; // Replace with the desired title
